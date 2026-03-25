@@ -18,8 +18,8 @@ const DEMO_MESSAGES = [
 
 const AI_HINTS = [
   { delay: 1200, text: "Клиент эмоционально напряжён. Используйте эмпатию в начале ответа.", tag: "Тон", color: "#f59e0b" },
-  { delay: 3500, text: "Запросите данные заказа — уточните номер и дату оформления.", tag: "Действие", color: "#1a8cff" },
-  { delay: 6000, text: "Уточните предпочтения: возврат средств или обмен товара.", tag: "Уточнение", color: "#1a8cff" },
+  { delay: 3500, text: "Запросите данные заказа — уточните номер и дату оформления.", tag: "Действие", color: "#7c3aed" },
+  { delay: 6000, text: "Уточните предпочтения: возврат средств или обмен товара.", tag: "Уточнение", color: "#7c3aed" },
   { delay: 8800, text: "Готовый ответ: «Понимаю вашу ситуацию. Оформляю возврат прямо сейчас — средства поступят в течение 3–5 рабочих дней.»", tag: "Подсказка AI", color: "#22c55e" },
 ];
 
@@ -123,9 +123,9 @@ function WorkspaceDemo() {
               <div
                 className="px-3 py-2 rounded-lg text-sm max-w-[85%]"
                 style={{
-                  background: msg.role === "client" ? "rgba(255,255,255,0.05)" : "var(--cm-blue-dim)",
-                  border: `1px solid ${msg.role === "client" ? "rgba(255,255,255,0.08)" : "var(--cm-blue-border)"}`,
-                  color: "#e2e8f0",
+                  background: msg.role === "client" ? "#f3f4f6" : "var(--cm-blue-dim)",
+                  border: `1px solid ${msg.role === "client" ? "#e5e7eb" : "var(--cm-blue-border)"}`,
+                  color: "#1a1035",
                   lineHeight: "1.5",
                 }}
               >
@@ -194,7 +194,7 @@ function WorkspaceDemo() {
                 >
                   {hint.tag}
                 </span>
-                <p className="text-sm leading-relaxed" style={{ color: "#c8d4e8" }}>
+                <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
                   {hint.text}
                 </p>
               </div>
@@ -263,7 +263,7 @@ function ProjectSettings() {
               <div
                 key={i}
                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg"
-                style={{ background: "rgba(255,255,255,0.02)", border: "1px solid var(--border)" }}
+                style={{ background: "#f9fafb", border: "1px solid var(--border)" }}
               >
                 <Icon name="FileText" size={16} style={{ color: "var(--cm-blue)", flexShrink: 0 }} />
                 <div className="flex-1 min-w-0">
@@ -302,7 +302,7 @@ function ProjectSettings() {
                   key={model}
                   className="px-3 py-2.5 rounded-lg text-sm text-left transition-all"
                   style={{
-                    background: i === 0 ? "var(--cm-blue-dim)" : "rgba(255,255,255,0.02)",
+                    background: i === 0 ? "var(--cm-blue-dim)" : "#f9fafb",
                     border: `1px solid ${i === 0 ? "var(--cm-blue-border)" : "var(--border)"}`,
                     color: i === 0 ? "var(--cm-blue)" : "var(--cm-text-dim)",
                   }}
@@ -319,7 +319,7 @@ function ProjectSettings() {
             </label>
             <div
               className="flex items-center justify-between px-3 py-2.5 rounded-lg"
-              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid var(--border)" }}
+              style={{ background: "#f9fafb", border: "1px solid var(--border)" }}
             >
               <span className="text-sm text-foreground">Русский</span>
               <Icon name="ChevronDown" size={14} style={{ color: "var(--cm-text-dim)" }} />
@@ -335,7 +335,7 @@ function ProjectSettings() {
                   key={style}
                   className="px-3 py-1.5 rounded text-xs transition-all"
                   style={{
-                    background: i === 0 ? "var(--cm-blue-dim)" : "rgba(255,255,255,0.02)",
+                    background: i === 0 ? "var(--cm-blue-dim)" : "#f9fafb",
                     border: `1px solid ${i === 0 ? "var(--cm-blue-border)" : "var(--border)"}`,
                     color: i === 0 ? "var(--cm-blue)" : "var(--cm-text-dim)",
                   }}
@@ -359,7 +359,7 @@ function ProjectSettings() {
             <div
               key={i}
               className="flex items-center gap-3 px-3 py-2.5 rounded-lg"
-              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid var(--border)" }}
+              style={{ background: "#f9fafb", border: "1px solid var(--border)" }}
             >
               <div
                 className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium flex-shrink-0"
@@ -422,13 +422,13 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen" style={{ background: "#0a0d14", color: "#e2e8f0" }}>
+    <div className="min-h-screen" style={{ background: "#fafafa", color: "#1a1035" }}>
       {/* Navbar */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3"
         style={{
-          background: "rgba(10,13,20,0.92)",
-          borderBottom: "1px solid rgba(26,140,255,0.1)",
+          background: "rgba(250,250,250,0.94)",
+          borderBottom: "1px solid rgba(124,58,237,0.1)",
           backdropFilter: "blur(16px)",
         }}
       >
@@ -439,7 +439,7 @@ export default function Index() {
           >
             <Icon name="MessageSquare" size={14} style={{ color: "#fff" }} />
           </div>
-          <span className="font-semibold text-sm tracking-wide text-white">ChatoMix</span>
+          <span className="font-semibold text-sm tracking-wide" style={{ color: "#1a1035" }}>ChatoMix</span>
           <span
             className="text-xs px-1.5 py-0.5 rounded font-mono-custom hidden sm:inline"
             style={{ background: "rgba(26,140,255,0.1)", color: "var(--cm-blue)", border: "1px solid var(--cm-blue-border)" }}
@@ -484,7 +484,7 @@ export default function Index() {
       {menuOpen && (
         <div
           className="fixed top-12 left-0 right-0 z-40 p-4 flex flex-col gap-1"
-          style={{ background: "rgba(10,13,20,0.98)", borderBottom: "1px solid var(--border)" }}
+          style={{ background: "rgba(250,250,250,0.99)", borderBottom: "1px solid var(--border)" }}
         >
           {NAV_ITEMS.map((item) => (
             <button
@@ -492,7 +492,7 @@ export default function Index() {
               onClick={() => scrollTo(item.id)}
               className="px-4 py-2.5 rounded text-sm text-left transition-all"
               style={{
-                color: activeNav === item.id ? "var(--cm-blue)" : "#c8d4e8",
+                color: activeNav === item.id ? "var(--cm-blue)" : "#4b5563",
                 background: activeNav === item.id ? "var(--cm-blue-dim)" : "transparent",
               }}
             >
@@ -510,7 +510,7 @@ export default function Index() {
         <div
           className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(26,140,255,0.12) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 70%)",
             filter: "blur(40px)",
           }}
         />
@@ -531,10 +531,10 @@ export default function Index() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5">
             <span className="text-gradient">Правильный ответ</span>
             <br />
-            <span className="text-white">в нужный момент</span>
+            <span style={{ color: "#1a1035" }}>в нужный момент</span>
           </h1>
 
-          <p className="text-base md:text-lg mb-8 max-w-xl mx-auto" style={{ color: "#8899bb", lineHeight: "1.7" }}>
+          <p className="text-base md:text-lg mb-8 max-w-xl mx-auto" style={{ color: "#6b7280", lineHeight: "1.7" }}>
             ChatoMix анализирует разговор с клиентом в реальном времени и мгновенно формирует подсказки на основе вашей базы знаний — готовые фразы, которые оператор может озвучить сразу.
           </p>
 
@@ -551,9 +551,9 @@ export default function Index() {
               onClick={() => scrollTo("audience")}
               className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all"
               style={{
-                background: "var(--cm-surface)",
+                background: "white",
                 border: "1px solid var(--border)",
-                color: "#c8d4e8",
+                color: "#4b5563",
               }}
             >
               Узнать подробнее
@@ -589,10 +589,10 @@ export default function Index() {
           <span className="text-xs font-mono-custom tracking-widest mb-3 inline-block" style={{ color: "var(--cm-blue)" }}>
             ДЛЯ КОГО
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1a1035" }}>
             Для тех, кто работает с клиентами
           </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: "#8899bb" }}>
+          <p className="text-base max-w-xl mx-auto" style={{ color: "#6b7280" }}>
             ChatoMix подходит для любой команды, где качество коммуникации напрямую влияет на результат
           </p>
         </div>
@@ -612,8 +612,8 @@ export default function Index() {
                   <Icon name={item.icon} fallback="Circle" size={18} style={{ color: "var(--cm-blue)" }} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                  <p className="text-sm leading-relaxed mb-3" style={{ color: "#8899bb" }}>{item.desc}</p>
+                  <h3 className="font-semibold mb-1" style={{ color: "#1a1035" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "#6b7280" }}>{item.desc}</p>
                   <span
                     className="text-xs font-mono-custom px-2 py-1 rounded"
                     style={{ background: "rgba(34,197,94,0.1)", color: "var(--cm-success)", border: "1px solid rgba(34,197,94,0.2)" }}
@@ -638,7 +638,7 @@ export default function Index() {
               <div key={i} className="flex items-start gap-3">
                 <Icon name={f.icon} fallback="Circle" size={16} style={{ color: "var(--cm-blue)", flexShrink: 0, marginTop: 1 }} />
                 <div>
-                  <p className="text-sm font-medium text-white">{f.label}</p>
+                  <p className="text-sm font-medium" style={{ color: "#1a1035" }}>{f.label}</p>
                   <p className="text-xs mt-0.5" style={{ color: "var(--cm-text-dim)" }}>{f.desc}</p>
                 </div>
               </div>
@@ -651,17 +651,17 @@ export default function Index() {
       <section
         id="workspace"
         className="px-6 py-20"
-        style={{ background: "rgba(26,140,255,0.02)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
+        style={{ background: "rgba(124,58,237,0.03)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}
       >
         <div className="max-w-6xl mx-auto">
           <div className="mb-10 text-center">
             <span className="text-xs font-mono-custom tracking-widest mb-3 inline-block" style={{ color: "var(--cm-blue)" }}>
               РАБОЧЕЕ ПРОСТРАНСТВО
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1a1035" }}>
               Интерфейс оператора
             </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ color: "#8899bb" }}>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#6b7280" }}>
               Слева — диалог с клиентом в реальном времени. Справа — AI формирует подсказки на основе базы знаний.
             </p>
           </div>
@@ -682,8 +682,8 @@ export default function Index() {
                   {step.step}
                 </span>
                 <div>
-                  <h4 className="font-semibold text-white mb-1">{step.title}</h4>
-                  <p className="text-sm" style={{ color: "#8899bb" }}>{step.desc}</p>
+                  <h4 className="font-semibold mb-1" style={{ color: "#1a1035" }}>{step.title}</h4>
+                  <p className="text-sm" style={{ color: "#6b7280" }}>{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -697,10 +697,10 @@ export default function Index() {
           <span className="text-xs font-mono-custom tracking-widest mb-3 inline-block" style={{ color: "var(--cm-blue)" }}>
             НАСТРОЙКА ПРОЕКТОВ
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#1a1035" }}>
             Гибкая конфигурация под ваш бизнес
           </h2>
-          <p className="text-base max-w-xl mx-auto" style={{ color: "#8899bb" }}>
+          <p className="text-base max-w-xl mx-auto" style={{ color: "#6b7280" }}>
             Загружайте документы, выбирайте AI-модель, управляйте командой — для каждого отдела свой проект
           </p>
         </div>
@@ -710,18 +710,18 @@ export default function Index() {
         <div
           className="mt-8 rounded-xl p-8 text-center relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, rgba(26,140,255,0.08) 0%, rgba(10,13,20,0) 100%)",
+            background: "linear-gradient(135deg, rgba(124,58,237,0.07) 0%, rgba(255,255,255,0) 100%)",
             border: "1px solid var(--cm-blue-border)",
           }}
         >
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(26,140,255,0.08) 0%, transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(124,58,237,0.06) 0%, transparent 70%)" }}
           />
-          <h3 className="text-xl font-bold text-white mb-2 relative z-10">
+          <h3 className="text-xl font-bold mb-2 relative z-10" style={{ color: "#1a1035" }}>
             Готовы запустить ChatoMix в своём call-центре?
           </h3>
-          <p className="text-sm mb-6 relative z-10" style={{ color: "#8899bb" }}>
+          <p className="text-sm mb-6 relative z-10" style={{ color: "#6b7280" }}>
             Начните с бесплатного проекта — подключите базу знаний и запустите первый диалог за 15 минут
           </p>
           <button
@@ -743,7 +743,7 @@ export default function Index() {
           <div className="w-5 h-5 rounded flex items-center justify-center" style={{ background: "var(--cm-blue)" }}>
             <Icon name="MessageSquare" size={10} style={{ color: "#fff" }} />
           </div>
-          <span className="text-sm font-semibold text-white">ChatoMix</span>
+          <span className="text-sm font-semibold" style={{ color: "#1a1035" }}>ChatoMix</span>
         </div>
         <p className="text-xs" style={{ color: "var(--cm-text-dim)" }}>
           © 2026 ChatoMix. AI-ассистент для профессиональной поддержки клиентов.
